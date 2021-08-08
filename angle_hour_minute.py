@@ -18,6 +18,8 @@ def calcAngle(h, m):
 
     # total minute travelled.
     m_degree_with_respect_to_12 = (360/60)*m
+    print(h_degree_with_respect_to_12)
+    print(m_degree_with_respect_to_12)
 
     total_degree_diff = abs(h_degree_with_respect_to_12-m_degree_with_respect_to_12)
     if(total_degree_diff >=180 ):
@@ -25,6 +27,6 @@ def calcAngle(h, m):
     return total_degree_diff
 
 def main():
-    print(calcAngle(11,30))
+    print(calcAngle(2, 24))
 
 main()
