@@ -2,12 +2,13 @@ package main
 
 import "fmt"
 
+// Node is basic unit of singly linked list
 type Node struct{
     data string
     next *Node
 }
 
-
+// insertion operation
 func (l *Node) append(newData string) *Node{
     last := l
 
@@ -29,6 +30,7 @@ func (l *Node) append(newData string) *Node{
     return l
 }
 
+// display prints node data present in singly linked list
 func (l *Node) display(){
     last := l
 
