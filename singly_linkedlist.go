@@ -8,7 +8,7 @@ type Node struct{
     next *Node
 }
 
-// insertion operation
+// insertion operation with pointer receiver
 func (l *Node) append(newData string){
     last := l
 
