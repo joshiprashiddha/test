@@ -9,7 +9,7 @@ type Node struct{
 }
 
 // insertion operation
-func (l *Node) append(newData string) *Node{
+func (l *Node) append(newData string){
     last := l
 
     newNode := Node{
@@ -19,15 +19,30 @@ func (l *Node) append(newData string) *Node{
 
     // linkedlist is empty
     if (Node{} == *l) {
-        l = &newNode
+        l.data = newData
+        l.next = nil
     }else{
         for last.next != nil{
             last = last.next
         }
         last.next = &newNode
     }
+}
 
-    return l
+func (l *Node) appendBeginning(newData string) *Node{
+    newNode := Node{
+        data: newData,
+        next: nil,
+    }
+
+    if (Node{} == *l){
+        l.data = newData
+        l.next = nil
+    }else{
+        newNode.next = l
+    }
+
+    return &newNode
 }
 
 // display prints node data present in singly linked list
@@ -48,14 +63,13 @@ func (l *Node) display(){
 
 func main(){
     list := &Node{}
-    list = list.append("6")
-    list = list.append("7")
-    list = list.append("8")
-    list = list.append("9")
-    list = list.append("10")
-    list = list.append("11")
-    list.display()
-    list = list.append("100")
-    list = list.append("110")
+    list.append("6")
+    list.append("7")
+    list.append("8")
+    list.append("9")
+    list.append("10")
+    list.append("11")
+    list = list.appendBeginning("100")
+    list.append("110")
     list.display()
 }
